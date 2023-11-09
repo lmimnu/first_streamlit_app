@@ -6,5 +6,5 @@ streamlit.header("BreakFast favourites")
 
 streamlit.text('🥣 Omega3 & Blueberry oatmeal')
 streamlit.text(' 🥗 Kale, Spinach & Rocket Smoothhie')
-streamlit.text("🐔 🥑🍞Hard-Boiled Free-Range Egg")
+streamlit.text("🐔 Hard-Boiled Free-Range Egg")
 streamlit.text("🥑🍞 Avocado Toast")
