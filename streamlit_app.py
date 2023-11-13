@@ -25,8 +25,8 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("🥣 Fruityvice fruit advice 🥑")
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response.json()) # Just displays the content
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+#streamlit.text(fruityvice_response.json()) # Just displays the content
 # normalize or parsing the json output what does the next line do? 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # displays the parsed output in a readble format- what does this do?
