@@ -10,6 +10,11 @@ streamlit.text("🐔 Hard-Boiled Free-Range Egg")
 streamlit.text("🥑🍞 Avocado Toast")
 
 
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
+
+
 import pandas
 streamlit.header("🥣 🥗 Build your own fruit smoothie 🥑🍞")
 my_fruit_list= pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -24,6 +29,3 @@ streamlit.dataframe(fruits_to_show)
 
 
 
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response)
