@@ -28,7 +28,7 @@ streamlit.dataframe(fruits_to_show)
 
 
 # New reapeatble code block function for fruity vice
-def get_fruityvice_data(this_fruit_choice)
+def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     # normalize or parsing the json output what does the next line do? 
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
