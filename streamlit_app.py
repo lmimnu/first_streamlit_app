@@ -27,19 +27,32 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 # New section to display fruity vice Api response. 
-
-streamlit.header("🥣 Fruityvice fruit advice 🥑")
 # import requests
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
+streamlit.header("🥣 Fruityvice fruit advice 🥑")
+Try:
+fruit_choice = streamlit.text_input('What fruit would you like information about?')
+If not fruit_choice:
+streamlit.error("Please select a fruit to get the information.")
+Else: 
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-#streamlit.text(fruityvice_response.json()) # Just displays the content
 # normalize or parsing the json output what does the next line do? 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # displays the parsed output in a readble format- what does this do?
 streamlit.dataframe(fruityvice_normalized)
+except URLError as e:
+streamlit.error()
+
+#fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+#streamlit.write('The user entered ', fruit_choice)
+
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+#streamlit.text(fruityvice_response.json()) # Just displays the content
+# normalize or parsing the json output what does the next line do? 
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# displays the parsed output in a readble format- what does this do?
+#streamlit.dataframe(fruityvice_normalized)
 
 # dont run naything past here for troublshotting
 streamlit.stop()
