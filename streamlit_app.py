@@ -30,11 +30,11 @@ streamlit.dataframe(fruits_to_show)
 # import requests
 
 streamlit.header("🥣 Fruityvice fruit advice 🥑")
-Try:
+try:
 fruit_choice = streamlit.text_input('What fruit would you like information about?')
-If not fruit_choice:
+if not fruit_choice:
 streamlit.error("Please select a fruit to get the information.")
-Else: 
+else: 
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 # normalize or parsing the json output what does the next line do? 
