@@ -73,7 +73,7 @@ except URLError as e:
 #streamlit.text("The Fruit load list contains:")
 #streamlit.text(my_data_row)
 
-streamlit.header("The Fruit load list contains:")
+streamlit.header("view our Fruit list - Add your favorites!")
 # snowflake related functions
 #my_cur = my_cnx.cursor()
 #my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
